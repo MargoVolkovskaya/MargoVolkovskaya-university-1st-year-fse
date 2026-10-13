@@ -1,3 +1,4 @@
+# Работа не доделана до конца
 n,m = input().split()
 n = int(n)
 m = round(float(m),2)
