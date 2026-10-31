@@ -4,11 +4,13 @@ def draw_rectangle(rows,columns,ch):
             print(ch,end="")
         print()
 
+
 def draw_triangle(rows,ch):
     for i in range(rows):
         for j in range(i + 1):
             print(ch,end="")
         print()
+
 
 def draw_border(rows,columns,ch):
     for i in range(rows):
@@ -18,6 +20,7 @@ def draw_border(rows,columns,ch):
             else:
                 print(" ",end="")
         print()
+
 
 def main():
     n,m = map(int,input("Введите размеры: ").split())
