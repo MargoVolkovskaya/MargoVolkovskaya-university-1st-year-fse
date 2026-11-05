@@ -1,7 +1,5 @@
-N = int(input())
+N = int(input("Введите количество секунд: "))
 hours = N // 3600
-N %= 3600
-minutes = N // 60
-N %= 60
-seconds = N
+minutes = N % 3600 // 60
+seconds = N % 60
 print('{}:{:02}:{:02}'.format(hours, minutes, seconds))
