@@ -1,6 +1,4 @@
-import string
-def clean_text(text):
-
+def remove_brackets(text):
     while True:
         position1 = text.rfind('(')
         if position1 == -1:
@@ -8,27 +6,32 @@ def clean_text(text):
         position2 = text.find(')',position1)
         if position2 == -1:
             text = text[:position1] + text[position1 + 1:]
-            continue
-        text = text[:position1] + text[position2 + 1:]
-
-    while "  " in text:
-        text = text.replace("  ", " ")
-
-    for mark in string.punctuation:
-        text = text.replace(" " + mark, mark)
-
-
+        else:
+            text = text[:position1] + text[position2 + 1:]
 
     return text
 
+
+def remove_spaces(text):
+    while "  " in text:
+        text = text.replace("  ", " ")
+
+    for mark in ".,?!:;":
+        text = text.replace(" " + mark, mark)
+
+    return text.strip()
+
+
+def shorten_text(text):
+    return remove_spaces(remove_brackets(text))
+
+
 def main():
-    input_text = input('Введите строку: ')
-    result_text = clean_text(input_text)
-    print("\nОтвет на задачу:",result_text)
+    input_text = input('Исходный текст: ')
+    print("Укороченный текст:", shorten_text(input_text))
 
 
 main()
-
 
 
 # input
