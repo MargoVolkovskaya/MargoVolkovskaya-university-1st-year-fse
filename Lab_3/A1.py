@@ -1,16 +1,26 @@
-x1 = int(input())
-y1 = int(input())
-x2 = int(input())
-y2 = int(input())
-if not(x1 // x2 >= 0 and y1 // y2 >= 0):
-    print("No")
-else:
-    print("Yes,",end="")
-    if (x1 > 0 and y1 > 0):
-        print("I")
-    elif (x1 < 0 and y1 > 0):
-        print("II")
-    elif (x1 < 0 and y1 < 0):
-        print("III")
+def quarter(x, y):
+    if x > 0 and y > 0:
+        return "I"
+    if x < 0 and y > 0:
+        return "II"
+    if x < 0 and y < 0:
+        return "III"
+    return "IV"
+
+
+def main():
+    x1 = int(input("Введите кординату первой точки по оси ОХ:"))
+    y1 = int(input("Введите кординату первой точки по оси ОУ:"))
+    x2 = int(input("Введите кординату первой точки по оси ОХ:"))
+    y2 = int(input("Введите кординату первой точки по оси ОУ:"))
+
+    quarter1 = quarter(x1, y1)
+    quarter2 = quarter(x2, y2)
+
+    if quarter1 == quarter2:
+        print("Yes,", quarter1)
     else:
-        print("IV")
+        print("No")
+
+
+main()
