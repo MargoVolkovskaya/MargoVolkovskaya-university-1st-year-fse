@@ -1,4 +1,3 @@
-import re
 def split_sentences(text):
     return text.split()
 
